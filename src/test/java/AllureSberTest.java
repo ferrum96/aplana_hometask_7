@@ -1,8 +1,6 @@
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import ru.aplana.autotest.steps.BaseSteps;
 import ru.aplana.autotest.steps.IpotekaPageSteps;
 import ru.aplana.autotest.steps.MainPageSteps;
@@ -34,7 +32,6 @@ public class AllureSberTest {
                 .checkCalcValue("Ежемесячный платеж","17 535 \u20BD")
                 .checkCalcValue("Необходимый доход","29 224 \u20BD")
                 .checkCalcValue("Процентная ставка","11 %");
-
     }
 
     @After

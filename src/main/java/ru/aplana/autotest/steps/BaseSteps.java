@@ -2,15 +2,11 @@ package ru.aplana.autotest.steps;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import io.qameta.allure.Attachment;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.aplana.autotest.pages.BasePage;
 import ru.aplana.autotest.utils.TestProperties;
-
 import java.util.concurrent.TimeUnit;
 
 public class BaseSteps {
@@ -32,11 +28,6 @@ public class BaseSteps {
 
     public static WebDriver getDriver(){
         return driver;
-    }
-
-    @Attachment(type = "image/png", value = "Screenshot")
-    public static byte[] takeScreenshot() {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
     @After

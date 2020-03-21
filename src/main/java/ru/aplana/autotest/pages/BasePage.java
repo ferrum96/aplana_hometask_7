@@ -29,7 +29,7 @@ public class BasePage {
     }
 
     public void clickButton(WebElement element) throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element  );
     }
 
@@ -52,7 +52,5 @@ public class BasePage {
     public static void waittextToBePresentInElement(WebElement element, String text){
         wait.until(ExpectedConditions.textToBePresentInElement(element,text));
     }
-
-
 
 }
