@@ -1,16 +1,14 @@
 package ru.aplana.autotest.glue;
 
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.ru.Когда;
 import cucumber.api.java.ru.Тогда;
 import io.cucumber.datatable.DataTable;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import ru.aplana.autotest.steps.IpotekaPageSteps;
 import ru.aplana.autotest.steps.MainPageSteps;
-
 import java.util.Map;
-
 import static ru.aplana.autotest.steps.BaseSteps.*;
 
 public class MyStepdefs {

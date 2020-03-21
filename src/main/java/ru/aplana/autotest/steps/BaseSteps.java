@@ -2,11 +2,13 @@ package ru.aplana.autotest.steps;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.aplana.autotest.pages.BasePage;
 import ru.aplana.autotest.utils.TestProperties;
+
 import java.util.concurrent.TimeUnit;
 
 public class BaseSteps {
@@ -24,6 +26,11 @@ public class BaseSteps {
         driver.get(props.getProperty("url"));
         driver.manage().deleteAllCookies();
         BasePage.waitClickableElement(driver.findElement(By.xpath("//a[@class='cookie-warning__close']"))).click();
+    }
+
+    @Attachment(value = "Page screenshot", type = "image/png")
+    public byte[] saveScreenshot(byte[] screenShot) {
+        return screenShot;
     }
 
     public static WebDriver getDriver(){

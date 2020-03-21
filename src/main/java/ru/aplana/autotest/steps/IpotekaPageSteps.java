@@ -2,6 +2,7 @@ package ru.aplana.autotest.steps;
 
 import io.qameta.allure.Step;
 import ru.aplana.autotest.pages.IpotekaPage;
+
 import static org.junit.Assert.assertTrue;
 import static ru.aplana.autotest.pages.BasePage.waittextToBePresentInElement;
 
