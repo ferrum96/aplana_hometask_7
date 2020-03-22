@@ -49,8 +49,14 @@ public class BasePage {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static void waittextToBePresentInElement(WebElement element, String text){
-        wait.until(ExpectedConditions.textToBePresentInElement(element,text));
+    public static boolean waittextToBePresentInElement(WebElement element, String text){
+       try {
+           wait.until(ExpectedConditions.textToBePresentInElement(element,text));
+           return true;
+       }catch (Exception e){
+           return false;
+       }
+
     }
 
 }

@@ -68,6 +68,7 @@
                     <argLine>
                         -Dfile.encoding=UTF-8
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+                        -Dcucumber.options="--tags ${TAGS}"
                     </argLine>
                     <systemProperties>
                         <property>

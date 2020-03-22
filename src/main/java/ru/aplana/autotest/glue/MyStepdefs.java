@@ -10,7 +10,6 @@ import ru.aplana.autotest.steps.IpotekaPageSteps;
 import ru.aplana.autotest.steps.MainPageSteps;
 import java.util.Map;
 import static ru.aplana.autotest.steps.BaseSteps.*;
-
 public class MyStepdefs {
 
     private MainPageSteps mainPageSteps = new MainPageSteps();

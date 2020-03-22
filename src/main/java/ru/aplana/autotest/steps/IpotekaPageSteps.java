@@ -34,10 +34,11 @@ public class IpotekaPageSteps extends BaseSteps {
 
     @Step("поле {0} заполнено значением {1}")
     public IpotekaPageSteps checkCalcValue(String field, String value) {
-        waittextToBePresentInElement(IpotekaPage.getValue(field),value);
-        String actual = IpotekaPage.getValue(field).getText();
-        assertTrue(String.format("Значение поля [%s] равно [%s]. Ожидалось - [%s]", field, actual, value),
-                actual.equals(value));
+        if (waittextToBePresentInElement(IpotekaPage.getValue(field),value) == false){
+            String actual = IpotekaPage.getValue(field).getText();
+            assertTrue(String.format("Значение поля [%s] равно [%s]. Ожидалось - [%s]", field, actual, value),
+                    actual.equals(value));
+        }
         return this;
     }
 }
