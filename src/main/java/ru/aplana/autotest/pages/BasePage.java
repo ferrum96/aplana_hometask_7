@@ -10,7 +10,7 @@ import static ru.aplana.autotest.steps.BaseSteps.getDriver;
 
 public class BasePage {
 
-    public static WebDriverWait wait = new WebDriverWait(getDriver(),100);
+    public static WebDriverWait wait = new WebDriverWait(getDriver(),10);
 
     BasePage() {
         PageFactory.initElements(getDriver(), this);

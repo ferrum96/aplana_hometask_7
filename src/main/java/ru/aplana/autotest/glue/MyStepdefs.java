@@ -1,21 +1,11 @@
 package ru.aplana.autotest.glue;
 
-import cucumber.api.Result;
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.AfterStep;
-import cucumber.api.java.Before;
 import cucumber.api.java.ru.Когда;
 import cucumber.api.java.ru.Тогда;
 import io.cucumber.datatable.DataTable;
-import io.qameta.allure.Attachment;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import ru.aplana.autotest.steps.IpotekaPageSteps;
 import ru.aplana.autotest.steps.MainPageSteps;
 import java.util.Map;
-import static ru.aplana.autotest.steps.BaseSteps.*;
-
 
 public class MyStepdefs {
 
@@ -64,22 +54,5 @@ public class MyStepdefs {
         Map<String,String> dataMap = fields.asMap(String.class, String.class);
         dataMap.forEach((field, value) -> { new IpotekaPageSteps().checkCalcValue(field, value); });
     }
-
-    @Before
-    public void before(){
-        initDriver();
-    }
-
-    @Attachment(value = "Page screenshot", type = "image/png")
-    public static byte[] saveScreenshot() {
-        return ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
-    }
-
-    @After
-    public void after(Scenario sc) throws Exception {
-        if(sc.isFailed()) saveScreenshot();
-        tearDown();
-    }
-
 }
 
